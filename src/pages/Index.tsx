@@ -107,7 +107,7 @@ const Index = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              variants={stagger}
+              variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
             >
               {products.map((product) => (
