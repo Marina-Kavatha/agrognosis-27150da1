@@ -8,7 +8,6 @@ import { storefrontApiRequest, STOREFRONT_QUERY, type ShopifyProduct } from "@/l
 import { ProductCard } from "@/components/ProductCard";
 
 const transition = { duration: 0.8, ease: [0.2, 0.8, 0.2, 1] as const };
-const stagger = { staggerChildren: 0.08 };
 
 const steps = [
   { num: "01", title: "Παραγωγός", desc: "Μικροί Έλληνες παραγωγοί καλλιεργούν με παραδοσιακές μεθόδους." },
