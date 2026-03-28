@@ -6,6 +6,8 @@ import heroImage from "@/assets/hero-herbs.jpg";
 import { useEffect, useState } from "react";
 import { storefrontApiRequest, STOREFRONT_QUERY, type ShopifyProduct } from "@/lib/shopify";
 import { ProductCard } from "@/components/ProductCard";
+import { ReviewsCarousel } from "@/components/ReviewsCarousel";
+import { NewsletterPopup } from "@/components/NewsletterPopup";
 
 const transition = { duration: 0.8, ease: [0.2, 0.8, 0.2, 1] as const };
 
@@ -36,6 +38,8 @@ const Index = () => {
 
   return (
     <Layout>
+      <NewsletterPopup />
+
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center">
         <div className="absolute inset-0">
@@ -171,20 +175,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials placeholder */}
+      {/* Customer Reviews */}
       <section className="py-[12vh]">
-        <div className="container mx-auto text-center">
-          <h2 className="font-display text-3xl md:text-4xl mb-12">Τι Λένε οι Πελάτες μας</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-secondary/30 p-8 rounded-sm">
-                <p className="text-muted-foreground italic leading-relaxed text-sm mb-4">
-                  "Σύντομα θα εμφανιστούν εδώ αληθινές αξιολογήσεις πελατών."
-                </p>
-                <span className="text-xs text-muted-foreground/60 uppercase tracking-widest">— Αναμονή</span>
-              </div>
-            ))}
-          </div>
+        <div className="container mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl mb-8">Τι Λένε οι Πελάτες μας</h2>
+          <ReviewsCarousel />
         </div>
       </section>
 

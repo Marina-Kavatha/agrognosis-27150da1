@@ -25,7 +25,7 @@ export const Footer = () => {
           <div>
             <h4 className="text-xs uppercase tracking-widest mb-4 text-accent-foreground/50">Επικοινωνία</h4>
             <div className="flex flex-col gap-2 text-sm text-accent-foreground/70">
-              <span>info@theagrolab.gr</span>
+              <a href="mailto:theagrolab@gmail.com" className="hover:text-accent-foreground transition-colors">theagrolab@gmail.com</a>
               <span>Αθήνα, Ελλάδα</span>
             </div>
           </div>

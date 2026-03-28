@@ -31,7 +31,7 @@ const ContactPage = () => {
                   <Mail className="w-5 h-5 text-primary mt-0.5 stroke-[1px]" />
                   <div>
                     <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">Email</p>
-                    <p className="text-sm">info@theagrolab.gr</p>
+                    <a href="mailto:theagrolab@gmail.com" className="text-sm hover:text-primary transition-colors">theagrolab@gmail.com</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
