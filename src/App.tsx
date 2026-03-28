@@ -9,8 +9,10 @@ import ShopPage from "./pages/ShopPage";
 import ProductPage from "./pages/ProductPage";
 import AboutPage from "./pages/AboutPage";
 import ProducersPage from "./pages/ProducersPage";
+import ProducerProfilePage from "./pages/ProducerProfilePage";
 import BecomeProducerPage from "./pages/BecomeProducerPage";
 import ContactPage from "./pages/ContactPage";
+import WellnessGuidePage from "./pages/WellnessGuidePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,8 +27,10 @@ const AppContent = () => {
         <Route path="/product/:handle" element={<ProductPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/producers" element={<ProducersPage />} />
+        <Route path="/producers/:slug" element={<ProducerProfilePage />} />
         <Route path="/become-producer" element={<BecomeProducerPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/wellness-guide" element={<WellnessGuidePage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
