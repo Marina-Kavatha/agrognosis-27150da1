@@ -41,10 +41,10 @@ const Index = () => {
       <NewsletterPopup />
 
       {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center">
+      <section className="relative h-[400px] md:h-[600px] w-screen -mx-[calc((100vw-100%)/2)] flex items-center">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="Ελληνικά βότανα" className="w-full h-full object-cover image-treatment" />
-          <div className="absolute inset-0 bg-accent/50" />
+          <img src={heroImage} alt="Ελληνικά βότανα" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-accent/60" />
         </div>
         <div className="relative container mx-auto">
           <motion.div
