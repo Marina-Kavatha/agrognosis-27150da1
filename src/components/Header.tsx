@@ -3,6 +3,7 @@ import { CartDrawer } from "./CartDrawer";
 import { useState } from "react";
 import { Menu, X, User } from "lucide-react";
 import { AuthModal } from "./AuthModal";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { to: "/", label: "Αρχική" },
@@ -23,8 +24,8 @@ export const Header = () => {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto flex items-center justify-between h-16 md:h-20">
-          <Link to="/" className="font-display text-xl md:text-2xl tracking-tight text-foreground">
-            The AgroLab
+          <Link to="/" className="flex items-center">
+            <img src={logo} alt="The AgroLab" className="h-10 md:h-14 w-auto" />
           </Link>
 
           {/* Desktop nav */}
@@ -47,10 +48,10 @@ export const Header = () => {
           <div className="flex items-center gap-3">
             <button
               onClick={() => setAuthOpen(true)}
-              className="hidden md:flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+              className="p-2 text-foreground hover:opacity-70 transition-opacity duration-200"
+              aria-label="Σύνδεση"
             >
-              <User className="w-4 h-4" />
-              <span>Σύνδεση</span>
+              <User className="w-5 h-5" />
             </button>
             <CartDrawer />
             <button
@@ -80,13 +81,6 @@ export const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              <button
-                onClick={() => { setMobileOpen(false); setAuthOpen(true); }}
-                className="text-sm py-2 text-muted-foreground text-left flex items-center gap-2"
-              >
-                <User className="w-4 h-4" />
-                Σύνδεση / Εγγραφή
-              </button>
             </div>
           </nav>
         )}

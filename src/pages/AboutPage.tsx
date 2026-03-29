@@ -6,7 +6,7 @@ const transition = { duration: 0.8, ease: [0.2, 0.8, 0.2, 1] as const };
 
 const AboutPage = () => {
   return (
-    <Layout>
+    <Layout breadcrumbTrail={[{ label: "Σχετικά" }]}>
       {/* Hero */}
       <section className="relative h-[50vh] flex items-end">
         <img src={aboutImage} alt="Ελληνική ύπαιθρος" className="absolute inset-0 w-full h-full object-cover image-treatment" />

@@ -135,10 +135,17 @@ const WellnessGuidePage = () => {
     s.label.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const breadcrumbTrail = activeSymptom
+    ? [
+        { label: "Wellness Guide", to: "/wellness-guide" },
+        { label: activeSymptom.label },
+      ]
+    : [{ label: "Wellness Guide" }];
+
   return (
-    <Layout>
-      <section className="py-[12vh]">
-        <div className="container mx-auto max-w-4xl">
+    <Layout breadcrumbTrail={breadcrumbTrail}>
+      <section className="py-[8vh] md:py-[12vh]">
+        <div className="container mx-auto max-w-3xl">
           <AnimatePresence mode="wait">
             {!activeSymptom ? (
               <motion.div
@@ -149,7 +156,7 @@ const WellnessGuidePage = () => {
                 transition={transition}
               >
                 <h1 className="font-display text-4xl md:text-5xl mb-4">Wellness Guide</h1>
-                <p className="text-muted-foreground mb-12 max-w-lg">
+                <p className="text-muted-foreground mb-12 max-w-lg" style={{ fontSize: "17px", lineHeight: 1.7 }}>
                   Ανακαλύψτε πώς τα ελληνικά φυτά μπορούν να σας βοηθήσουν, με βάση την επιστήμη.
                 </p>
 
@@ -165,16 +172,16 @@ const WellnessGuidePage = () => {
                   />
                 </div>
 
-                {/* Symptom cards */}
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {/* Symptom pills */}
+                <div className="flex flex-wrap gap-3">
                   {filteredSymptoms.map((symptom) => (
                     <button
                       key={symptom.id}
                       onClick={() => setActiveSymptom(symptom)}
-                      className="flex flex-col items-center gap-3 p-6 bg-secondary/30 border border-border/50 rounded-sm hover:border-primary/50 hover:bg-secondary/50 transition-all duration-200 text-center"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground rounded-full text-sm font-medium hover:bg-primary/90 transition-colors duration-200"
                     >
-                      <span className="text-2xl">{symptom.emoji}</span>
-                      <span className="text-sm font-medium">{symptom.label}</span>
+                      <span>{symptom.emoji}</span>
+                      <span>{symptom.label}</span>
                     </button>
                   ))}
                 </div>
@@ -203,35 +210,55 @@ const WellnessGuidePage = () => {
                   Πίσω στα συμπτώματα
                 </button>
 
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-8">
                   <span className="text-3xl">{activeSymptom.emoji}</span>
-                  <h1 className="font-display text-3xl md:text-4xl">{activeSymptom.label}</h1>
+                  <h1 className="font-display text-3xl md:text-4xl" style={{ color: "hsl(var(--primary))" }}>
+                    {activeSymptom.label}
+                  </h1>
                 </div>
 
-                {/* Article */}
-                <div className="mb-12 space-y-6">
+                {/* Article — editorial style */}
+                <div className="mb-12" style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}>
                   {activeSymptom.article.map((paragraph, i) => (
-                    <p key={i} className={`text-sm leading-relaxed ${i === 0 ? "text-foreground font-display text-lg leading-relaxed first-letter:text-4xl first-letter:font-display first-letter:mr-1 first-letter:float-left" : "text-muted-foreground"}`}>
+                    <p
+                      key={i}
+                      className={i === 0 ? "text-foreground first-letter:text-5xl first-letter:font-display first-letter:mr-1.5 first-letter:float-left first-letter:leading-none" : "text-muted-foreground"}
+                      style={{
+                        fontSize: i === 0 ? "18px" : "16px",
+                        lineHeight: 1.7,
+                        marginBottom: "24px",
+                      }}
+                    >
                       {paragraph}
                     </p>
                   ))}
                 </div>
 
+                {/* Divider */}
+                <hr className="border-border/40 mb-8" />
+
                 {/* References */}
                 <div className="mb-12 p-6 bg-secondary/30 rounded-sm">
-                  <h3 className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Επιστημονικές Αναφορές</h3>
+                  <h3 className="font-display text-xl mb-4" style={{ color: "hsl(var(--primary))" }}>
+                    Επιστημονικές Αναφορές
+                  </h3>
                   <ul className="space-y-2">
                     {activeSymptom.references.map((ref, i) => (
-                      <li key={i} className="text-xs text-muted-foreground/80 leading-relaxed">
+                      <li key={i} className="italic text-muted-foreground/70" style={{ fontSize: "13px", lineHeight: 1.6 }}>
                         [{i + 1}] {ref}
                       </li>
                     ))}
                   </ul>
                 </div>
 
+                {/* Divider */}
+                <hr className="border-border/40 mb-8" />
+
                 {/* Recommended products */}
                 <div>
-                  <h3 className="font-display text-xl mb-6">Προτεινόμενα Προϊόντα</h3>
+                  <h3 className="font-display text-xl mb-6" style={{ color: "hsl(var(--primary))" }}>
+                    Προτεινόμενα Προϊόντα
+                  </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {activeSymptom.products.map((product) => (
                       <div key={product.handle} className="flex items-center gap-4 p-4 bg-secondary/30 border border-border/50 rounded-sm">
@@ -257,6 +284,7 @@ const WellnessGuidePage = () => {
                 <div className="mt-12 p-6 bg-secondary/20 border border-border/30 rounded-sm">
                   <p className="text-xs text-muted-foreground leading-relaxed text-center">
                     ⚕️ Οι πληροφορίες αυτές είναι εκπαιδευτικές και δεν αντικαθιστούν ιατρική συμβουλή.
+                    Συμβουλευτείτε πάντα τον γιατρό σας πριν αλλάξετε τη διατροφή ή τη θεραπεία σας.
                   </p>
                 </div>
               </motion.div>

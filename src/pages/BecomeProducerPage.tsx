@@ -25,7 +25,7 @@ const BecomeProducerPage = () => {
   };
 
   return (
-    <Layout>
+    <Layout breadcrumbTrail={[{ label: "Γίνε Παραγωγός" }]}>
       <section className="py-[12vh]">
         <div className="container mx-auto">
           <div className="max-w-3xl">
