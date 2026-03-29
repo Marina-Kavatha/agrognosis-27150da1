@@ -77,7 +77,7 @@ const ProductPage = () => {
   ];
 
   return (
-    <Layout>
+    <Layout breadcrumbTrail={[{ label: "Κατάστημα", to: "/shop" }, { label: node.title }]}>
       <section className="py-[12vh]">
         <div className="container mx-auto">
           <motion.div
