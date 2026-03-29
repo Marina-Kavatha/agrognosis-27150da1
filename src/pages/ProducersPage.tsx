@@ -8,7 +8,7 @@ const transition = { duration: 0.8, ease: [0.2, 0.8, 0.2, 1] as const };
 
 const ProducersPage = () => {
   return (
-    <Layout>
+    <Layout breadcrumbTrail={[{ label: "Παραγωγοί" }]}>
       <section className="py-[12vh]">
         <div className="container mx-auto">
           <h1 className="font-display text-4xl md:text-5xl mb-4">Οι Παραγωγοί μας</h1>

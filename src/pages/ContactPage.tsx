@@ -16,7 +16,7 @@ const ContactPage = () => {
   };
 
   return (
-    <Layout>
+    <Layout breadcrumbTrail={[{ label: "Επικοινωνία" }]}>
       <section className="py-[12vh]">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
