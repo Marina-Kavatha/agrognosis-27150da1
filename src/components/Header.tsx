@@ -25,7 +25,7 @@ export const Header = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center">
-            <img src={logo} alt="The AgroLab" className="h-10 w-auto" />
+            <img src={logo} alt="The AgroLab" className="h-[55px] w-auto" />
           </Link>
 
           {/* Desktop nav */}
