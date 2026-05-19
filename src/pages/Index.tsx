@@ -146,7 +146,7 @@ const Index = () => {
           {loading ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[1,2,3,4].map(i => (
-                <div key={i} className="aspect-[4/5] bg-secondary animate-pulse rounded-sm" />
+                <div key={i} className="aspect-square bg-secondary animate-pulse rounded-sm" />
               ))}
             </div>
           ) : products.length > 0 ? (
