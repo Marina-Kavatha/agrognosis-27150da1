@@ -8,6 +8,7 @@ import { storefrontApiRequest, STOREFRONT_QUERY, type ShopifyProduct } from "@/l
 import { ProductCard } from "@/components/ProductCard";
 import { ReviewsCarousel } from "@/components/ReviewsCarousel";
 import { NewsletterPopup } from "@/components/NewsletterPopup";
+import { producers } from "@/data/producers";
 
 const transition = { duration: 0.8, ease: [0.2, 0.8, 0.2, 1] as const };
 
