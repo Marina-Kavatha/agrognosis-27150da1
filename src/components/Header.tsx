@@ -3,7 +3,7 @@ import { CartDrawer } from "./CartDrawer";
 import { useState } from "react";
 import { Menu, X, User } from "lucide-react";
 import { AuthModal } from "./AuthModal";
-import logo from "@/assets/logo.png";
+import agrognosisLogo from "@/assets/agrognosis-logo.png";
 
 const navLinks = [
   { to: "/", label: "Αρχική" },
