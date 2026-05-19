@@ -78,7 +78,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           <img
             src={imageUrl}
             alt={image?.altText || node.title}
-            className="w-full h-full object-cover image-treatment mix-blend-multiply opacity-90 group-hover:scale-105 transition-transform duration-700"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
           <button
             onClick={handleAddToCart}
