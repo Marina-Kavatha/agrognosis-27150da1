@@ -22,7 +22,7 @@ const AboutPage = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={transition}>
             <h2 className="font-display text-3xl mb-6">Η Αποστολή μας</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Το AgroLab γεννήθηκε από την πεποίθηση ότι η ελληνική γη κρύβει θησαυρούς
+              Το Agrognosis γεννήθηκε από την πεποίθηση ότι η ελληνική γη κρύβει θησαυρούς
               που αξίζουν να φτάσουν στα χέρια κάθε συνειδητού καταναλωτή. Δεν είμαστε απλά
               ένα κατάστημα — είμαστε γέφυρα μεταξύ παράδοσης και επιστήμης, μεταξύ χωραφιού
               και πόλης.
@@ -40,7 +40,7 @@ const AboutPage = () => {
       <section className="py-[12vh] bg-secondary/30">
         <div className="container mx-auto max-w-3xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={transition}>
-            <h2 className="font-display text-3xl mb-6">Το Μοντέλο AgroLab</h2>
+            <h2 className="font-display text-3xl mb-6">Το Μοντέλο Agrognosis</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Λειτουργούμε ως B2B2C πλατφόρμα: συνεργαζόμαστε απευθείας με μικρούς
               παραγωγούς (B2B) και φέρνουμε τα προϊόντα τους στον τελικό καταναλωτή (B2C)

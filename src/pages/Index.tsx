@@ -13,7 +13,7 @@ const transition = { duration: 0.8, ease: [0.2, 0.8, 0.2, 1] as const };
 
 const steps = [
   { num: "01", title: "Παραγωγός", desc: "Μικροί Έλληνες παραγωγοί καλλιεργούν με παραδοσιακές μεθόδους." },
-  { num: "02", title: "AgroLab", desc: "Επαληθεύουμε, τεκμηριώνουμε και συσκευάζουμε με σεβασμό." },
+  { num: "02", title: "Agrognosis", desc: "Επαληθεύουμε, τεκμηριώνουμε και συσκευάζουμε με σεβασμό." },
   { num: "03", title: "Εσύ", desc: "Λαμβάνεις ένα προϊόν με ιστορία, επιστήμη και τελετουργία." },
 ];
 
@@ -70,7 +70,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* What is AgroLab */}
+      {/* What is Agrognosis */}
       <section className="py-[12vh]">
         <div className="container mx-auto max-w-3xl text-center">
           <motion.div
@@ -79,9 +79,9 @@ const Index = () => {
             viewport={{ once: true }}
             transition={transition}
           >
-            <h2 className="font-display text-3xl md:text-4xl mb-6">Τι είναι το AgroLab</h2>
+            <h2 className="font-display text-3xl md:text-4xl mb-6">Τι είναι το Agrognosis</h2>
             <p className="text-muted-foreground leading-relaxed text-lg">
-              Το AgroLab είναι μια υπερτοπική ελληνική αγορά ευεξίας που γεφυρώνει
+              Το Agrognosis είναι μια υπερτοπική ελληνική αγορά ευεξίας που γεφυρώνει
               τους μικρούς τοπικούς παραγωγούς με τον σύγχρονο αστικό καταναλωτή.
               Κάθε προϊόν συνοδεύεται από τρία επίπεδα: την ιστορία του παραγωγού,
               την επιστημονική τεκμηρίωση και μια πρόταση συνειδητής χρήσης.

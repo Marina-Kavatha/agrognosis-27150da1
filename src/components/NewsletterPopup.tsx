@@ -54,7 +54,7 @@ export const NewsletterPopup = () => {
             </button>
 
             <div className="text-center">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-primary mb-4">The AgroLab</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-primary mb-4">Agrognosis</p>
               <h3 className="font-display text-2xl md:text-3xl mb-3">
                 Μείνε συνδεδεμένος με τη φύση
               </h3>
