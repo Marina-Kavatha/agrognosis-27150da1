@@ -74,7 +74,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
       }}
     >
       <Link to={`/product/${node.handle}`} className="group flex flex-col space-y-4">
-        <div className="aspect-[4/5] overflow-hidden bg-secondary relative rounded-sm">
+        <div className="aspect-square overflow-hidden bg-secondary relative rounded-sm">
           <img
             src={imageUrl}
             alt={image?.altText || node.title}
