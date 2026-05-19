@@ -11,14 +11,31 @@ interface ProductCardProps {
   product: ShopifyProduct;
 }
 
+const driveImg = (id: string) => `https://lh3.googleusercontent.com/d/${id}=w800`;
+
+const productImageOverrides: { match: string[]; url: string }[] = [
+  { match: ["χαμομήλι"], url: driveImg("1x55PZCgQoysmuGPxNhvWPF6uoADIHBlk") },
+  { match: ["τσάι βουνού", "ολύμπου"], url: driveImg("1Raf0omEvpNO5Itrbp9HAc96us1nH6VJo") },
+  { match: ["πευκόμελο"], url: driveImg("1BbxcDUzjL-WxDQuJxo8EtYefraZ_hjHq") },
+  { match: ["μέντα"], url: driveImg("1rWUwEFxiIF6YCvcDLSJe2W_d8Ac7Q_1D") },
+  { match: ["θυμαρίσιο", "υμηττού"], url: driveImg("173rD9IXQa4QYl18MFFoXX99o-V9sZX0V") },
+  { match: ["ανθόμελο"], url: driveImg("12atLFuw8-IJmqgSvnj5DApblqWBZlnHr") },
+  { match: ["λέσβου"], url: driveImg("1UbNAUhLIfwasSXl-EMXf7LDxE7boBDEg") },
+  { match: ["καλαμάτας"], url: driveImg("1v2B7mUIRQjtiTxe_YtpY4LmZIX-EwxMZ") },
+];
+
 const fallbackByCategory = (title: string): string => {
   const t = title.toLowerCase();
-  if (t.includes("μέλι") || t.includes("meli") || t.includes("honey"))
-    return "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=800&q=80";
+  for (const o of productImageOverrides) {
+    if (o.match.every((m) => t.includes(m))) return o.url;
+  }
+  for (const o of productImageOverrides) {
+    if (o.match.some((m) => t.includes(m))) return o.url;
+  }
+  if (t.includes("μέλι") || t.includes("honey")) return driveImg("173rD9IXQa4QYl18MFFoXX99o-V9sZX0V");
   if (t.includes("λάδι") || t.includes("ελαι") || t.includes("olive") || t.includes("oil"))
-    return "https://images.unsplash.com/photo-1601301704941-eccd9d76ee4d?w=800&q=80";
-  if (t.includes("βότ") || t.includes("τσάι") || t.includes("χαμομ") || t.includes("μέντα") || t.includes("herb"))
-    return "https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=800&q=80";
+    return driveImg("1v2B7mUIRQjtiTxe_YtpY4LmZIX-EwxMZ");
+  if (t.includes("βότ") || t.includes("τσάι") || t.includes("herb")) return driveImg("1Raf0omEvpNO5Itrbp9HAc96us1nH6VJo");
   return "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80";
 };
 
