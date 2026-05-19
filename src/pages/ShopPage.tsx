@@ -57,7 +57,7 @@ const ShopPage = () => {
           {loading ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div key={i} className="aspect-[4/5] bg-secondary animate-pulse rounded-sm" />
+                <div key={i} className="aspect-square bg-secondary animate-pulse rounded-sm" />
               ))}
             </div>
           ) : products.length > 0 ? (
