@@ -10,7 +10,7 @@ const navLinks = [
   { to: "/shop", label: "Κατάστημα" },
   { to: "/producers", label: "Παραγωγοί" },
   { to: "/wellness-guide", label: "Wellness Guide" },
-  { to: "/about", label: "Σχετικά" },
+  { to: "/about", label: "About" },
   { to: "/become-producer", label: "Γίνε Παραγωγός" },
   { to: "/contact", label: "Επικοινωνία" },
 ];

@@ -11,6 +11,19 @@ interface ProductCardProps {
   product: ShopifyProduct;
 }
 
+const fallbackByCategory = (title: string): string => {
+  const t = title.toLowerCase();
+  if (t.includes("μέλι") || t.includes("meli") || t.includes("honey"))
+    return "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=800&q=80";
+  if (t.includes("λάδι") || t.includes("ελαι") || t.includes("olive") || t.includes("oil"))
+    return "https://images.unsplash.com/photo-1601301704941-eccd9d76ee4d?w=800&q=80";
+  if (t.includes("βότ") || t.includes("τσάι") || t.includes("χαμομ") || t.includes("μέντα") || t.includes("herb"))
+    return "https://images.unsplash.com/photo-1515envelope".length > 0
+      ? "https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=800&q=80"
+      : "";
+  return "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80";
+};
+
 export const ProductCard = ({ product }: ProductCardProps) => {
   const addItem = useCartStore(state => state.addItem);
   const isLoading = useCartStore(state => state.isLoading);
@@ -18,6 +31,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   const image = node.images.edges[0]?.node;
   const variant = node.variants.edges[0]?.node;
   const price = node.priceRange.minVariantPrice;
+  const imageUrl = image?.url || fallbackByCategory(node.title);
 
   const handleAddToCart = async (e: React.MouseEvent) => {
     e.preventDefault();
@@ -46,17 +60,11 @@ export const ProductCard = ({ product }: ProductCardProps) => {
     >
       <Link to={`/product/${node.handle}`} className="group flex flex-col space-y-4">
         <div className="aspect-[4/5] overflow-hidden bg-secondary relative rounded-sm">
-          {image ? (
-            <img
-              src={image.url}
-              alt={image.altText || node.title}
-              className="w-full h-full object-cover image-treatment mix-blend-multiply opacity-90 group-hover:scale-105 transition-transform duration-700"
-            />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center text-muted-foreground text-sm">
-              Χωρίς εικόνα
-            </div>
-          )}
+          <img
+            src={imageUrl}
+            alt={image?.altText || node.title}
+            className="w-full h-full object-cover image-treatment mix-blend-multiply opacity-90 group-hover:scale-105 transition-transform duration-700"
+          />
           <button
             onClick={handleAddToCart}
             disabled={isLoading || !variant?.availableForSale}

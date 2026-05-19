@@ -6,7 +6,7 @@ const transition = { duration: 0.8, ease: [0.2, 0.8, 0.2, 1] as const };
 
 const AboutPage = () => {
   return (
-    <Layout breadcrumbTrail={[{ label: "Σχετικά" }]}>
+    <Layout breadcrumbTrail={[{ label: "About" }]}>
       {/* Hero */}
       <section className="relative h-[50vh] flex items-end">
         <img src={aboutImage} alt="Ελληνική ύπαιθρος" className="absolute inset-0 w-full h-full object-cover image-treatment" />
@@ -36,16 +36,10 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* B2B2C Model */}
+      {/* Process */}
       <section className="py-[12vh] bg-secondary/30">
         <div className="container mx-auto max-w-3xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={transition}>
-            <h2 className="font-display text-3xl mb-6">Το Μοντέλο Agrognosis</h2>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              Λειτουργούμε ως B2B2C πλατφόρμα: συνεργαζόμαστε απευθείας με μικρούς
-              παραγωγούς (B2B) και φέρνουμε τα προϊόντα τους στον τελικό καταναλωτή (B2C)
-              με πλήρη διαφάνεια.
-            </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               <div className="text-center">
                 <span className="font-body text-3xl font-light text-primary/40 tabular-nums">01</span>
