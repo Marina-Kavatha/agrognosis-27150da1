@@ -207,7 +207,7 @@ const ProductPage = () => {
                     </li>
                   </ul>
                   <p className="text-[10px] text-muted-foreground/50 mt-4">
-                    Πηγή: Εσωτερικά εργαστηριακά αποτελέσματα AgroLab
+                    Πηγή: Εσωτερικά εργαστηριακά αποτελέσματα Agrognosis
                   </p>
                 </div>
               )}

@@ -21,7 +21,7 @@ export const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
       });
     } else if (mode === "register") {
       toast.success("Εγγραφή επιτυχής!", {
-        description: "Καλωσορίσατε στο AgroLab.",
+        description: "Καλωσορίσατε στο Agrognosis.",
         position: "top-center",
       });
     } else {

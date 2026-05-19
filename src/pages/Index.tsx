@@ -13,7 +13,7 @@ const transition = { duration: 0.8, ease: [0.2, 0.8, 0.2, 1] as const };
 
 const steps = [
   { num: "01", title: "Παραγωγός", desc: "Μικροί Έλληνες παραγωγοί καλλιεργούν με παραδοσιακές μεθόδους." },
-  { num: "02", title: "AgroLab", desc: "Επαληθεύουμε, τεκμηριώνουμε και συσκευάζουμε με σεβασμό." },
+  { num: "02", title: "Agrognosis", desc: "Επαληθεύουμε, τεκμηριώνουμε και συσκευάζουμε με σεβασμό." },
   { num: "03", title: "Εσύ", desc: "Λαμβάνεις ένα προϊόν με ιστορία, επιστήμη και τελετουργία." },
 ];
 
@@ -70,7 +70,66 @@ const Index = () => {
         </div>
       </section>
 
-      {/* What is AgroLab */}
+      {/* Producers community */}
+      <section className="py-[12vh] bg-[hsl(35,30%,94%)]">
+        <div className="container mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="font-display text-3xl md:text-4xl mb-4">Οι Άνθρωποι Πίσω από τα Προϊόντα</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Γνωρίστε τους παραγωγούς που με μεράκι και αγάπη για τη γη φέρνουν στο σπίτι σας αυθεντικές γεύσεις της Ελλάδας.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+            {[
+              {
+                name: "Δημήτρης Παπαδόπουλος",
+                location: "Κρήτη",
+                quote: "Το λάδι μας δεν είναι απλά προϊόν — είναι η ιστορία τριών γενιών στους ελαιώνες της Μεσσαράς.",
+                img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
+              },
+              {
+                name: "Ελένη Κωνσταντίνου",
+                location: "Πήλιο",
+                quote: "Μαζεύω τα βότανα όπως μου έμαθε η γιαγιά μου — με σεβασμό στον χρόνο και τις εποχές.",
+                img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
+              },
+              {
+                name: "Νίκος Αντωνίου",
+                location: "Αρκαδία",
+                quote: "Οι μέλισσές μου ταξιδεύουν στα βουνά. Κάθε κουτάλι μέλι κρύβει έναν ολόκληρο ορεινό κήπο.",
+                img: "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?w=400&q=80",
+              },
+            ].map((p, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ ...transition, delay: i * 0.1 }}
+                className="text-center"
+              >
+                <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden">
+                  <img src={p.img} alt={p.name} className="w-full h-full object-cover" />
+                </div>
+                <h3 className="font-display text-lg mb-1">{p.name}</h3>
+                <p className="text-xs uppercase tracking-widest text-primary/70 mb-4">{p.location}</p>
+                <p className="text-sm text-muted-foreground italic leading-relaxed">«{p.quote}»</p>
+              </motion.div>
+            ))}
+          </div>
+          <div className="text-center mt-16">
+            <Link
+              to="/producers"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 text-sm tracking-wide hover:bg-primary/90 transition-colors duration-200 rounded-sm"
+            >
+              Γνώρισε όλους τους Παραγωγούς
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* What is Agrognosis */}
       <section className="py-[12vh]">
         <div className="container mx-auto max-w-3xl text-center">
           <motion.div
@@ -79,9 +138,9 @@ const Index = () => {
             viewport={{ once: true }}
             transition={transition}
           >
-            <h2 className="font-display text-3xl md:text-4xl mb-6">Τι είναι το AgroLab</h2>
+            <h2 className="font-display text-3xl md:text-4xl mb-6">Τι είναι το Agrognosis</h2>
             <p className="text-muted-foreground leading-relaxed text-lg">
-              Το AgroLab είναι μια υπερτοπική ελληνική αγορά ευεξίας που γεφυρώνει
+              Το Agrognosis είναι μια υπερτοπική ελληνική αγορά ευεξίας που γεφυρώνει
               τους μικρούς τοπικούς παραγωγούς με τον σύγχρονο αστικό καταναλωτή.
               Κάθε προϊόν συνοδεύεται από τρία επίπεδα: την ιστορία του παραγωγού,
               την επιστημονική τεκμηρίωση και μια πρόταση συνειδητής χρήσης.

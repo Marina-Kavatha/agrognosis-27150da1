@@ -57,7 +57,7 @@ const ProducerProfilePage = () => {
               {producer.verified && (
                 <div className="absolute top-4 right-4 flex items-center gap-2 bg-primary/90 text-primary-foreground px-3 py-1.5 rounded-sm">
                   <Shield className="w-3.5 h-3.5" />
-                  <span className="text-[10px] uppercase tracking-widest">AgroLab Verified</span>
+                  <span className="text-[10px] uppercase tracking-widest">Agrognosis Verified</span>
                 </div>
               )}
             </div>
