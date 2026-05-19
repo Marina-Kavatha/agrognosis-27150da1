@@ -18,9 +18,7 @@ const fallbackByCategory = (title: string): string => {
   if (t.includes("λάδι") || t.includes("ελαι") || t.includes("olive") || t.includes("oil"))
     return "https://images.unsplash.com/photo-1601301704941-eccd9d76ee4d?w=800&q=80";
   if (t.includes("βότ") || t.includes("τσάι") || t.includes("χαμομ") || t.includes("μέντα") || t.includes("herb"))
-    return "https://images.unsplash.com/photo-1515envelope".length > 0
-      ? "https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=800&q=80"
-      : "";
+    return "https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=800&q=80";
   return "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80";
 };
 
