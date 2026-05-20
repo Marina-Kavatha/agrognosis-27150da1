@@ -148,9 +148,9 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={transition}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl mx-auto"
+                className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-10 lg:gap-16 items-center max-w-5xl mx-auto"
               >
-                <div className="aspect-square overflow-hidden rounded-full max-w-[480px] mx-auto w-full">
+                <div className="w-[300px] h-[300px] overflow-hidden rounded-full mx-auto lg:mx-0 flex-shrink-0">
                   <img
                     src={giorgis.image}
                     alt={giorgis.name}
