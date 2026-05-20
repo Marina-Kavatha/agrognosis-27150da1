@@ -6,6 +6,7 @@ import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
 import { Loader2, Leaf } from "lucide-react";
 import { motion } from "framer-motion";
+import { fallbackByCategory } from "@/components/ProductCard";
 
 const transition = { duration: 0.8, ease: [0.2, 0.8, 0.2, 1] as const };
 
