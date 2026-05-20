@@ -138,7 +138,7 @@ const Index = () => {
         const giorgis = producers.find((p) => p.slug === "giorgis-papadopoulos");
         if (!giorgis) return null;
         return (
-          <section className="py-[12vh] bg-[hsl(35,35%,90%)]">
+          <section className="py-20 bg-[hsl(35,35%,90%)]">
             <div className="container mx-auto">
               <p className="text-xs uppercase tracking-[0.3em] text-primary mb-10 text-center">
                 Η Ιστορία της Εβδομάδας
@@ -148,9 +148,9 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={transition}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl mx-auto"
+                className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-10 lg:gap-16 items-center max-w-5xl mx-auto"
               >
-                <div className="aspect-square overflow-hidden rounded-full max-w-[480px] mx-auto w-full">
+                <div className="w-[300px] h-[300px] overflow-hidden rounded-full mx-auto lg:mx-0 flex-shrink-0">
                   <img
                     src={giorgis.image}
                     alt={giorgis.name}
