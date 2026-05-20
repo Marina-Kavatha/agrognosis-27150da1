@@ -133,6 +133,65 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Story of the Week */}
+      {(() => {
+        const giorgis = producers.find((p) => p.slug === "giorgis-papadopoulos");
+        if (!giorgis) return null;
+        return (
+          <section className="py-[12vh] bg-[hsl(35,35%,90%)]">
+            <div className="container mx-auto">
+              <p className="text-xs uppercase tracking-[0.3em] text-primary mb-10 text-center">
+                Η Ιστορία της Εβδομάδας
+              </p>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={transition}
+                className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl mx-auto"
+              >
+                <div className="aspect-square overflow-hidden rounded-full max-w-[480px] mx-auto w-full">
+                  <img
+                    src={giorgis.image}
+                    alt={giorgis.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h2 className="font-display text-3xl md:text-4xl mb-3 text-foreground">
+                    Γιώργης Παπαδόπουλος — Ήπειρος
+                  </h2>
+                  <p className="text-xs uppercase tracking-[0.25em] text-primary font-medium mb-6">
+                    Τσάι Βουνού από τις Κορυφές της Ηπείρου
+                  </p>
+                  <div className="font-display text-base md:text-lg leading-relaxed text-foreground/80 space-y-4">
+                    <p>
+                      Ο Γιώργης μεγάλωσε στους πρόποδες του Γράμμου, όπου από παιδί έμαθε να
+                      διαβάζει τη φύση δίπλα στον παππού του. Κάθε καλοκαίρι, όταν τα βουνά
+                      της Ηπείρου ανθίζουν, μαζεύει χειροκίνητα το τσάι του βουνού — όχι με
+                      μηχανές, όχι με βιομηχανικές μεθόδους. Με χέρια που ξέρουν πότε το φυτό
+                      είναι έτοιμο.
+                    </p>
+                    <p>Αυτή η γνώση δεν διδάσκεται σε σχολείο. Μεταφέρεται από γενιά σε γενιά.</p>
+                    <p>
+                      Στο Agrognosis πιστέψαμε στην ιστορία του από την πρώτη στιγμή. Γιατί
+                      πίσω από κάθε φλιτζάνι τσάι κρύβεται μια ζωή αφιερωμένη στη γη.
+                    </p>
+                  </div>
+                  <Link
+                    to="/producers"
+                    className="inline-flex items-center gap-2 mt-8 bg-primary text-primary-foreground px-8 py-4 text-sm tracking-wide hover:bg-primary/90 transition-colors duration-200 rounded-sm"
+                  >
+                    Γνώρισε τον Γιώργη
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        );
+      })()}
+
 
       {/* Featured Products */}
       <section className="py-[12vh] bg-secondary/30">

@@ -24,7 +24,7 @@ const productImageOverrides: { match: string[]; url: string }[] = [
   { match: ["καλαμάτας"], url: driveImg("1v2B7mUIRQjtiTxe_YtpY4LmZIX-EwxMZ") },
 ];
 
-const fallbackByCategory = (title: string): string => {
+export const fallbackByCategory = (title: string): string => {
   const t = title.toLowerCase();
   for (const o of productImageOverrides) {
     if (o.match.every((m) => t.includes(m))) return o.url;
@@ -37,6 +37,11 @@ const fallbackByCategory = (title: string): string => {
     return driveImg("1v2B7mUIRQjtiTxe_YtpY4LmZIX-EwxMZ");
   if (t.includes("βότ") || t.includes("τσάι") || t.includes("herb")) return driveImg("1Raf0omEvpNO5Itrbp9HAc96us1nH6VJo");
   return "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80";
+};
+
+export const getProductImageUrl = (product: ShopifyProduct): string => {
+  const img = product.node.images.edges[0]?.node;
+  return img?.url || fallbackByCategory(product.node.title);
 };
 
 export const ProductCard = ({ product }: ProductCardProps) => {
