@@ -53,6 +53,7 @@ const ProductPage = () => {
 
   const { node } = product;
   const image = node.images.edges[0]?.node;
+  const imageUrl = image?.url || fallbackByCategory(node.title);
   const variant = node.variants.edges[0]?.node;
 
   const handleAddToCart = async () => {
