@@ -90,17 +90,11 @@ const ProductPage = () => {
           >
             {/* Product Image */}
             <div className="aspect-square bg-secondary rounded-sm overflow-hidden relative">
-              {image ? (
-                <img
-                  src={image.url}
-                  alt={image.altText || node.title}
-                  className="w-full h-full object-cover image-treatment"
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                  Χωρίς εικόνα
-                </div>
-              )}
+              <img
+                src={imageUrl}
+                alt={image?.altText || node.title}
+                className="w-full h-full object-cover image-treatment"
+              />
               {/* Eco badge */}
               <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center">
                 <Leaf className="w-6 h-6 text-primary-foreground stroke-[1px]" />
