@@ -138,7 +138,7 @@ const Index = () => {
         const giorgis = producers.find((p) => p.slug === "giorgis-papadopoulos");
         if (!giorgis) return null;
         return (
-          <section className="py-[12vh] bg-[hsl(35,35%,90%)]">
+          <section className="py-20 bg-[hsl(35,35%,90%)]">
             <div className="container mx-auto">
               <p className="text-xs uppercase tracking-[0.3em] text-primary mb-10 text-center">
                 Η Ιστορία της Εβδομάδας
