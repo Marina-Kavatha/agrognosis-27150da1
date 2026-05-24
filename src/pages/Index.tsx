@@ -70,7 +70,7 @@ const Index = () => {
               </Link>
               <Link
                 to="/producers"
-                className="inline-flex items-center gap-2 border border-primary text-primary bg-transparent px-8 py-4 text-sm tracking-wide hover:bg-primary hover:text-primary-foreground transition-colors duration-200 rounded-sm"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 text-sm tracking-wide hover:bg-primary/90 transition-colors duration-200 rounded-sm"
               >
                 Γνωρίστε τους παραγωγούς μας
                 <ArrowRight className="w-4 h-4" />
