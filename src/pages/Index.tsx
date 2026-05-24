@@ -55,18 +55,27 @@ const Index = () => {
             className="max-w-2xl"
           >
             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-secondary leading-[1.1] mb-6">
-              Από τη γη,<br />με επιστήμη.
+              Ελληνική γη.<br />Τοπικοί παραγωγοί.
             </h1>
             <p className="text-secondary/80 text-lg md:text-xl leading-relaxed mb-8 max-w-lg">
               Rooted in Greece. Backed by Science.
             </p>
-            <Link
-              to="/shop"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 text-sm tracking-wide hover:bg-primary/90 transition-colors duration-200 rounded-sm"
-            >
-              Ανακαλύψτε τη Συλλογή
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                to="/shop"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 text-sm tracking-wide hover:bg-primary/90 transition-colors duration-200 rounded-sm"
+              >
+                Ανακαλύψτε τη Συλλογή
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                to="/producers"
+                className="inline-flex items-center gap-2 border border-primary text-primary bg-transparent px-8 py-4 text-sm tracking-wide hover:bg-primary hover:text-primary-foreground transition-colors duration-200 rounded-sm"
+              >
+                Γνωρίστε τους παραγωγούς μας
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
