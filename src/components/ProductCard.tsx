@@ -65,6 +65,11 @@ export const ProductCard = ({ product }: ProductCardProps) => {
       quantity: 1,
       selectedOptions: variant.selectedOptions || [],
     });
+    // Meta Pixel: AddToCart tracking
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      const productPrice = parseFloat(variant.price?.amount ?? price?.amount ?? '') || 35.00;
+      (window as any).fbq('track', 'AddToCart', { value: productPrice, currency: 'EUR' });
+    }
     toast.success("Προστέθηκε στο καλάθι", {
       description: node.title,
       position: "top-center",
