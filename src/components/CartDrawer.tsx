@@ -16,6 +16,9 @@ export const CartDrawer = () => {
   const handleCheckout = () => {
     const checkoutUrl = getCheckoutUrl();
     if (checkoutUrl) {
+      if (typeof window !== 'undefined' && (window as any).fbq) {
+        (window as any).fbq('track', 'InitiateCheckout', { value: totalPrice, currency: 'EUR' });
+      }
       window.open(checkoutUrl, '_blank');
       setIsOpen(false);
     }
